@@ -19,6 +19,7 @@ export default function GPT_Send_Button(loading, setLoading, messages, button_re
 
     sendGPTRequest(messages).then(response => 
         response.json().then(data => {
+          console.log(data);
           const reply = data['choices'][0]['message']['content'];
           setMessages([...messages, reply]);
           setLoading(false);
