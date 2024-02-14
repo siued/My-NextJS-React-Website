@@ -35,4 +35,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/src/App/GPT_Page/API_key.js
+API_key.js
