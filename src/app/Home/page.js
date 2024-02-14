@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import Project_List from './Project_List';
+import * as React from 'react';
+import Link from 'next/link';
+import Header from '../Header';
 
 function Home_Page() {
-    Project_List();
-
     return (
         <div className="bg-[#023436] min-h-screen">
-            <h1 className="text-4xl text-right bg-[#260F26] p-10 rounded-lg">Matej Kučera (siued)</h1>
+            <Header />
+            <h1 className="text-4xl text-right bg-[#260F26] p-10 rounded-lg">Matej Kučera</h1>
             <div className="flex-y justify-center">
                 <p className="p-10 bg-[#037971] rounded-xl text-xl mr-40 m-5">
                     Welcome to my website! I am a Master's student at the University of Groningen studying Computing Science on the Intelligent Systems and Visual Computing track. 
@@ -28,7 +30,10 @@ function Home_Page() {
                     <p>
                         Here's a list of some projects I have worked on recently:
                     </p>
-                    {Project_List()}
+                    <Project_List />
+                    <p>
+                        A preview of a chatbot I made using OpenAI's GPT-3 model can be found <Link href="/chat"><u>here</u></Link>.
+                    </p>
                 </div>
 
             </div>

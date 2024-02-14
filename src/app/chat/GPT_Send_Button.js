@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect } from "react";
 import sendGPTRequest from "./GPT_Request";
 
@@ -19,7 +21,13 @@ export default function GPT_Send_Button(loading, setLoading, messages, button_re
 
     sendGPTRequest(messages).then(response => 
         response.json().then(data => {
-          const reply = data['choices'][0]['message']['content'];
+          try {
+            const reply = data['choices'][0]['message']['content'];
+          } catch (error) {
+            console.error('Error fetching data:', error);
+            console.error('Data fetched:', data);
+            throw error;
+          }
           setMessages([...messages, reply]);
           setLoading(false);
         })

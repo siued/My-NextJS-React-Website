@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from "react";
 
 
@@ -23,18 +25,18 @@ export default function Project_List() {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        let data = fetchData();data.then(data => {
+        let data = fetchData();
+        data.then(data => {
         data = Array.from(data);
         data.sort((a, b) => b.updated_at.localeCompare(a.updated_at));
         // remove the github profile repository
         data = data.filter(project => project.name !== 'siued');
-        console.log(data);
         setProjects(data);
     });
     }, []);
 
     return (
-        <ul className="text-md underline list-disc pl-20">
+        <ul className="text-md underline list-disc pl-20 p-10">
             {projects.map(project => (
                 <li key={project.id}>
                     <a href={project.html_url} target="_blank" rel="noreferrer">{project.name} ({project.language})</a>
