@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
     return (
         <main className={inter.className}>
-            <title>Matej's Website</title>
+            <title>Matej&apos;s Website</title>
             <Home_Page />
         </main>
     );
@@ -25,8 +25,8 @@ function Home_Page() {
             <div className="flex-y justify-center">
                 <Green_Div className="mr-40">
                     <p>
-                        Welcome to my website! I am a Master's student at the University of Groningen studying Computing Science on the Intelligent Systems and Visual Computing track. 
-                        I am enthusiastic about developments in AI and ML and I'm always up for a challenge. To find out more about me, check out my projects below or visit my LinkedIn and Github profiles.
+                        Welcome to my website! I am a Master&apos;s student at the University of Groningen studying Computing Science on the Intelligent Systems and Visual Computing track. 
+                        I am enthusiastic about developments in AI and ML and I&apos;m always up for a challenge. To find out more about me, check out my projects below or visit my LinkedIn and Github profiles.
                     </p>
                 </Green_Div>
                 <Green_Div className="ml-40">
@@ -43,11 +43,11 @@ function Home_Page() {
                 </Green_Div>
                 <Green_Div className="mr-40">
                     <p>
-                        Here's a list of some projects I have worked on recently:
+                        Here&apos;s a list of some projects I have worked on recently:
                     </p>
                     <Project_List />
                     <p>
-                        A preview of a chatbot I made using OpenAI's GPT-3 model can be found <Link href="/chat"><u>here</u></Link>.
+                        A preview of a chatbot I made using OpenAI&apos;s GPT-3 model can be found <Link href="/chat"><u>here</u></Link>.
                     </p>
                 </Green_Div>
 
