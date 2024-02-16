@@ -1,15 +1,6 @@
-let api_key = process.env.OPENAI_API_KEY;
-if (!api_key) {
-    try {
-        const API_KEY = require('./API_key.js');
-        api_key = API_KEY();
-    } catch(error) {
-        console.error('Error fetching API key from ENv variable and API_key.js file:', error);
-    }
-}
+let api_key = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 
 export default function sendGPTRequest(messages) {
-
     const URL = 'https://api.openai.com/v1/chat/completions';
 
     const request = {

@@ -31,7 +31,7 @@ export default function GPT_Send_Button(loading, setLoading, messages, button_re
 			}
 			})
 		);
-	}, [messages]);
+	}, [messages, setMessages, setLoading]);
 
 	return (
 		<button ref = {button_ref} disabled={loading} onClick={sendButtonClicked} 
