@@ -22,14 +22,12 @@ export default function GPT_Send_Button(loading, setLoading, messages, button_re
 		sendGPTRequest(messages).then(response => 
 			response.json().then(data => {
 			try {
-				console.log(data);
 				const reply = data['choices'][0]['message']['content'];
 				setMessages([...messages, reply]);
 				setLoading(false);
 			} catch (error) {
-				console.error('Error fetching data:', error);
-				console.error('Data fetched:', data);
-				throw error;
+				const reply_error = data['error']['message'];
+				console.error('Error fetching data:', reply_error);
 			}
 			})
 		);

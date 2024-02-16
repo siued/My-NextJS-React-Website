@@ -1,9 +1,14 @@
-import { API_key } from "./API_key";
+let api_key = process.env.OPENAI_API_KEY;
+if (!api_key) {
+    try {
+        const API_KEY = require('./API_key.js');
+        api_key = API_KEY();
+    } catch(error) {
+        console.error('Error fetching API key from ENv variable and API_key.js file:', error);
+    }
+}
 
 export default function sendGPTRequest(messages) {
-    // API key is private, so it is stored in a file which won't be uploaded to GitHub
-    // this is not a good solution but it works for now
-    const api_key = API_key();
 
     const URL = 'https://api.openai.com/v1/chat/completions';
 
