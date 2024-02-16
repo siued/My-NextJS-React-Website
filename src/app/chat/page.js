@@ -14,9 +14,9 @@ function GPT_Page() {
   return (
     <div>
         <Header />
-        <div className="dark:bg-gray-600 dark:text-lime-100 text-center min-h-screen p-10 justify-center space-y-10">
-        <Message_List messages={messages} />
-        {Input_Div(loading, setLoading, messages, setMessages)}
+        <div className="bg-[#023436] dark:text-lime-100 min-h-screen p-10 justify-center space-y-10">
+          <Message_List messages={messages} />
+          {Input_Div(loading, setLoading, messages, setMessages)}
         </div>
     </div>
       

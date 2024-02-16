@@ -11,6 +11,6 @@ export function Input_Field(loading, setLoading, messages, button_ref) {
   };
 
   return (
-      <input onKeyUp={Handle_Enter} id='text_input' type="text" className="bg-gray-200 dark:bg-gray-800 dark:text-lime-100 p-2 rounded-lg" />
+      <input onKeyUp={Handle_Enter} id='text_input' type="text" className="bg-[#037971] dark:text-lime-100 p-2 rounded-lg" />
   );
 }
